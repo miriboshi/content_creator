@@ -18,25 +18,9 @@ O pipeline segue a **Medallion Architecture**, garantindo a governança e a qual
 *   **Silver (Cleaned):** Normalização de esquemas, tratamento de tipos (ex: conversão de Unix Timestamps BIGINT para TIMESTAMP) e deduplicação.
     
 *   **Gold (Analytics):** Agregações de negócio, rankings de performance (Window Functions) e tabelas pivotadas para consumo executivo.
-    
 
-graph LR
-    subgraph Extracao [Discovery & Ingestion]
-        W[Wiki API] --> B[Auto Loader]
-        Y[YouTube API] --> B
-    end
-
-    subgraph Lakehouse [Databricks Delta Lake]
-        B --> BR[(Bronze: Raw)]
-        BR --> S[(Silver: Standardized)]
-        S --> G[(Gold: Analytics)]
-    end
-
-    subgraph Business [Output]
-        G --> D1[SQL Dashboards]
-        G --> D2[CSV Export]
-    end
-
+  
+!(imagens/diagrama-arquitetura.png)
     
 3\. Decisões de Engenharia (Senior Design Reasoning)
 ----------------------------------------------------
