@@ -20,7 +20,7 @@ O pipeline segue a **Medallion Architecture**, garantindo a governança e a qual
 *   **Gold (Analytics):** Agregações de negócio, rankings de performance (Window Functions) e tabelas pivotadas para consumo executivo.
 
   
-!(imagens/diagrama-arquitetura.png)
+!(imagens/arquitetura.png)
     
 3\. Decisões de Engenharia (Senior Design Reasoning)
 ----------------------------------------------------
