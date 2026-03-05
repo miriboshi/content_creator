@@ -1,4 +1,5 @@
 Analytics Pipeline: Creators & YouTube Content 🚀
+
 Este projeto estabelece uma infraestrutura de dados end-to-end para a descoberta, ingestão e análise de performance de criadores de conteúdo. A arquitetura foi desenhada sob os princípios de idempotência, modularidade e eficiência de custos, utilizando o ecossistema Databricks Lakehouse.
 
 1. Objetivo do Projeto
