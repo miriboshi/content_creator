@@ -22,12 +22,12 @@ O pipeline segue a **Medallion Architecture**, garantindo a governança e a qual
   
 ![](imagens/arquitetura.png)
     
-3\. Decisões de Engenharia (Senior Design Reasoning)
+3\. Decisões de Engenharia
 ----------------------------------------------------
 
 ### Extração de Dados e "Cold Start"
 
-Como o projeto inicia sem dados, implementei uma estratégia de **Discovery & Enrichment**:
+Como o projeto inicia sem dados, implementei uma estratégia de **Discovery & Enriquecimento**:
 
 *   **Seed:** Uma UDF Python consome a API da Wikipedia para mapear páginas de criadores.
     
