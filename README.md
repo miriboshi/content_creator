@@ -20,10 +20,24 @@ O pipeline segue a **Medallion Architecture**, garantindo a governança e a qual
 *   **Gold (Analytics):** Agregações de negócio, rankings de performance (Window Functions) e tabelas pivotadas para consumo executivo.
     
 
-Snippet de código
+graph LR
+    subgraph Extracao [Discovery & Ingestion]
+        W[Wiki API] --> B[Auto Loader]
+        Y[YouTube API] --> B
+    end
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   graph LR      subgraph Extracao [Discovery & Ingestion]          W[Wiki API] --> B[Auto Loader]          Y[YouTube API] --> B      end      subgraph Lakehouse [Databricks Delta Lake]          B --> BR[(Bronze: Raw)]          BR --> S[(Silver: Standardized)]          S --> G[(Gold: Analytics)]      end      subgraph Business [Output]          G --> D1[SQL Dashboards]          G --> D2[CSV Export]      end   `
+    subgraph Lakehouse [Databricks Delta Lake]
+        B --> BR[(Bronze: Raw)]
+        BR --> S[(Silver: Standardized)]
+        S --> G[(Gold: Analytics)]
+    end
 
+    subgraph Business [Output]
+        G --> D1[SQL Dashboards]
+        G --> D2[CSV Export]
+    end
+
+    
 3\. Decisões de Engenharia (Senior Design Reasoning)
 ----------------------------------------------------
 
